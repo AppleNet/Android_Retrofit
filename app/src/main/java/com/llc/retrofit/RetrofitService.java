@@ -42,11 +42,13 @@ public interface RetrofitService {
     *    4.用serviceMethod，创建OkHttpCall，调用adapt方法 适配当前接口
     * 二. serviceMethod.Builder中
     *     遍历注解，获取请求方法，请求体，类型，请求的url等一系列参数，然后通过OkHttpCall 转化成一个对象。
+    *     解析它对应的 method 的各种参数（它有各种如 parseHeaders 的方法），比如注解（@Get），入参，
+    *     另外还负责获取 callAdapter,responseConverter等Retrofit配置，好为后面的okhttp3.Request做好参数准备，
+    *     它的toRequest为 OkHttp 提供 Request，可以说它承载了后续 Http 请求所需的一切参数
+    *
+    *
     *
     * ***/
-
-
-
     // token=a250942f-01fe-4f1c-acc7-611a2e1b6436
     // loanApplyNo=MF201706231600012584
     // businessType=EDULOAN
