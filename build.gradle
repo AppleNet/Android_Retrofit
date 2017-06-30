@@ -1,0 +1,46 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.3'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    // compile
+    // Rx
+    rxbinding = 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
+    rxbinding_support_v4 = 'com.jakewharton.rxbinding2:rxbinding-support-v4:2.0.0'
+    rxbinding_appcompat_v7 = 'com.jakewharton.rxbinding2:rxbinding-appcompat-v7:2.0.0'
+    rxbinding_design = 'com.jakewharton.rxbinding2:rxbinding-design:2.0.0'
+    rxbinding_recyclerview_v7 = 'com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:2.0.0'
+    rxbinding_leanback_v17 = 'com.jakewharton.rxbinding2:rxbinding-leanback-v17:2.0.0'
+    rxAndroid = 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    rxJava = 'io.reactivex.rxjava2:rxjava:2.1.0'
+    qucikAdapter = 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.18'
+    rxlifecycle = 'com.trello.rxlifecycle2:rxlifecycle:2.1.0'
+    rxlifecycle_android = 'com.trello.rxlifecycle2:rxlifecycle-android:2.1.0'
+    findbugs = 'com.google.code.findbugs:jsr305:3.0.1'
+    dagger = 'com.google.dagger:dagger:2.11'
+    annotationProcessor = 'com.google.dagger:dagger-compiler:2.11'
+    gridlayout_v7 = 'com.android.support:gridlayout-v7:25.3.1'
+    retrofit2 = 'com.squareup.retrofit2:retrofit:2.3.0'
+    converter_gson = 'com.squareup.retrofit2:converter-gson:2.3.0'
+    adapter_rxjava2 = 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+}
