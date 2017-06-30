@@ -123,5 +123,11 @@ public interface RetrofitService {
     @Multipart
     Observable<WrapperBean<RechekData>> partMapResult(@PartMap Map<String, Object> params);
 
+    /**
+     *  post形式
+     *  @URL
+     *
+     * */
+    //@POST("orderDetail")
 
 }

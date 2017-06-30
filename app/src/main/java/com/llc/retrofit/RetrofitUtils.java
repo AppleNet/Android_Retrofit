@@ -73,7 +73,7 @@ public class RetrofitUtils {
 
 
     private Retrofit getRetrofit(){
-        return getRetrofitBuilder().baseUrl("http://10.143.117.45:8081/sm-api/").build();
+        return getRetrofitBuilder().baseUrl("").build();
     }
 
     public RetrofitService getService(){
