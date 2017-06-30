@@ -200,6 +200,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
+
         RetrofitUtils.getRetrofitUtils().getService().partResult(RequestBody.create(MediaType.parse("text/plain"), token), RequestBody.create(MediaType.parse("text/plain"), loanApplyNo), RequestBody.create(MediaType.parse("text/plain"), businessType))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
