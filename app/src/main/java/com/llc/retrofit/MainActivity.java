@@ -217,6 +217,23 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
+        RetrofitUtils.getRetrofitUtils().getService().urlResult("http://10.143.117.45:8081/sm-api/orderDetail?token=a250942f-01fe-4f1c-acc7-611a2e1b6436&loanApplyNo=MF201706231600012584&businessType=EDULOAN")
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .flatMap(new Function<WrapperBean<RechekData>, ObservableSource<RechekData>>() {
+                    @Override
+                    public ObservableSource<RechekData> apply(@NonNull WrapperBean<RechekData> rechekDataWrapperBean) throws Exception {
+                        return Observable.just(rechekDataWrapperBean.getData());
+                    }
+                })
+                .subscribe(new Consumer<RechekData>() {
+                    @Override
+                    public void accept(@NonNull RechekData retrofitResult) throws Exception {
+                        Log.d("MainActivity", "urlResult:"+retrofitResult.getSellerEntity().getLoanApplyNo());
+                        Toast.makeText(MainActivity.this, "urlResult:"+retrofitResult.getSellerEntity().getLoanApplyNo(), Toast.LENGTH_LONG).show();
+                    }
+                });
+
 
     }
 
